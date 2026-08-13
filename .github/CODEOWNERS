@@ -1,0 +1,8 @@
+# This repository publishes no packages, so the sensitive path is narrower than in
+# the code repository: CI, and this file. Normative changes to the specification are
+# governed by GOVERNANCE.md and the pull-request rule, not by ownership.
+#
+# Team slugs verified against the org, not guessed: a CODEOWNERS entry naming a team
+# that does not exist is silently ignored.
+/.github/workflows/  @w3tech/ao_security_reliability @w3tech/ao_infrastructure
+/.github/CODEOWNERS  @w3tech/ao_security_reliability
