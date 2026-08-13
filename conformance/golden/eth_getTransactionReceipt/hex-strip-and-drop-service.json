@@ -1,0 +1,154 @@
+{
+  "case_version": 1,
+  "case": "eth_getTransactionReceipt/hex-strip-and-drop-service",
+  "description": "ERC-20 Transfer receipt captured from Ethereum mainnet block 25093593. At tier 1 service fields are dropped, receipt fields renamed, numerics emitted as decimal strings and indexed topics unpadded by the structural zero-block strip. At tier 2 the same receipt-level field set carries an ABI-decoded log.",
+  "spec": {
+    "document": "specs/evm-v1.md",
+    "sections": [
+      "T1",
+      "T2"
+    ],
+    "method_document": "specs/methods/eth_getTransactionReceipt.md"
+  },
+  "method": "eth_getTransactionReceipt",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "eth_getTransactionReceipt",
+    "params": [
+      "0x4d415bcf65c3ae5c21922db408a0c3c657897d04369cd35c9291181a09dccbc0"
+    ]
+  },
+  "raw_response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "type": "0x2",
+      "status": "0x1",
+      "cumulativeGasUsed": "0x2ace4d",
+      "logs": [
+        {
+          "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000002744dfd9898f0babbc570cc594bbbc84b487a22b",
+            "0x000000000000000000000000fa21f001ef54ac2510d72e854a492b8731c3e7fa"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000000000006fc23ac00",
+          "blockHash": "0x84d0b97ca6779f04f20164ceca89863c649ffafc475432b8cdfe3e70a70398b4",
+          "blockNumber": "0x17ee5d9",
+          "blockTimestamp": "0x6a05ca1f",
+          "transactionHash": "0x4d415bcf65c3ae5c21922db408a0c3c657897d04369cd35c9291181a09dccbc0",
+          "transactionIndex": "0x14",
+          "logIndex": "0x4d",
+          "removed": false
+        }
+      ],
+      "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000008000008000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000010000000000000000000000000000000000040000000000000010000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000002000000000000000000000000100000000000100000000000000000000000000000000000000000000000000000000000000000000008000000000000",
+      "transactionHash": "0x4d415bcf65c3ae5c21922db408a0c3c657897d04369cd35c9291181a09dccbc0",
+      "transactionIndex": "0x14",
+      "blockHash": "0x84d0b97ca6779f04f20164ceca89863c649ffafc475432b8cdfe3e70a70398b4",
+      "blockNumber": "0x17ee5d9",
+      "gasUsed": "0x135b3",
+      "effectiveGasPrice": "0x8b485351",
+      "from": "0x05ff6964d21e5dae3b1010d5ae0465b3c450f381",
+      "to": "0x2744dfd9898f0babbc570cc594bbbc84b487a22b",
+      "contractAddress": null
+    }
+  },
+  "expect": [
+    {
+      "tier": 1,
+      "token_tier_header": "1",
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "block": "25093593",
+          "block_hash": "0x84d0b97ca6779f04f20164ceca89863c649ffafc475432b8cdfe3e70a70398b4",
+          "from": "0x05ff6964D21e5dAE3b1010D5AE0465b3c450F381",
+          "gas_price": "2336772945",
+          "gas_used": "79283",
+          "logs": [
+            {
+              "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+              "data": "0x00000000000000000000000000000000000000000000000000000006fc23ac00",
+              "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x2744dfd9898f0babbc570cc594bbbc84b487a22b",
+                "0xfa21f001ef54ac2510d72e854a492b8731c3e7fa"
+              ]
+            }
+          ],
+          "status": "success",
+          "to": "0x2744dfD9898f0bAbbC570cC594Bbbc84b487a22b",
+          "tx": "0x4d415bcf65c3ae5c21922db408a0c3c657897d04369cd35c9291181a09dccbc0",
+          "tx_index": "20"
+        }
+      }
+    },
+    {
+      "tier": 2,
+      "token_tier_header": "2",
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "block": "25093593",
+          "block_hash": "0x84d0b97ca6779f04f20164ceca89863c649ffafc475432b8cdfe3e70a70398b4",
+          "from": "0x05ff6964D21e5dAE3b1010D5AE0465b3c450F381",
+          "gas_price": "2336772945",
+          "gas_used": "79283",
+          "logs": [
+            {
+              "args": {
+                "from": "0x2744dfD9898f0bAbbC570cC594Bbbc84b487a22b",
+                "to": "0xfa21F001eF54ac2510d72E854A492b8731C3e7fa",
+                "value": "30000000000"
+              },
+              "contract": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+              "event": "Transfer"
+            }
+          ],
+          "status": "success",
+          "to": "0x2744dfD9898f0bAbbC570cC594Bbbc84b487a22b",
+          "tx": "0x4d415bcf65c3ae5c21922db408a0c3c657897d04369cd35c9291181a09dccbc0",
+          "tx_index": "20"
+        }
+      }
+    }
+  ],
+  "normalize": [
+    "address-case"
+  ],
+  "live_capable": true,
+  "asserts": [
+    "tier 1 drops the receipt service fields: logsBloom, cumulativeGasUsed, type",
+    "tier 1 drops contractAddress when null",
+    "tier 1 drops the per-log position and service fields: blockHash, blockNumber, blockTimestamp (EIP-7642), transactionHash, transactionIndex, logIndex, removed",
+    "tier 1 receipt renames: transactionHash to tx, blockNumber to block, blockHash to block_hash, transactionIndex to tx_index, gasUsed to gas_used, effectiveGasPrice to gas_price",
+    "the receipt-level transactionIndex survives as tx_index while the per-log copy is dropped",
+    "status 0x1 becomes the string success",
+    "hex-to-decimal numeric encoding, a decimal string at every magnitude: block, tx_index, gas_used, gas_price",
+    "structural zero-block strip on topics[1..N] carrying exactly 12 leading zero bytes, emitted as the trailing 20 bytes in lowercase; topics[0] kept verbatim",
+    "log data is kept verbatim at tier 1",
+    "tier 2 leaves the receipt-level field set identical to tier 1",
+    "tier 2 renames the per-log address to contract",
+    "tier 2 resolves topics[0] to the event name and discards the raw signature hash",
+    "tier 2 decodes topics[1..N] and data into a single args object keyed by ABI parameter name, in ABI parameter order, discarding raw topics and data",
+    "tier 2 same-signature disambiguation by topic count: 3 topics with a 32-byte data word is ERC-20 Transfer, so value is decoded from data",
+    "tier 2 numeric args are decimal strings: args.value",
+    "the JSON-RPC envelope is preserved at both tiers",
+    "every DATA value in the raw response is byte-aligned hex, 64 digits for the 32-byte hashes and topics, 512 for logsBloom, 40 for addresses, so a validating decoder can ingest the vector; the QUANTITY values (status, type, block number, gas) are minimal-digit hex per JSON-RPC and may be odd-length"
+  ],
+  "not_asserted": [
+    "EIP-55 checksum casing. The expected bodies carry the checksummed form, verified independently against keccak at capture time, but address case is normalised on both sides (see normalize), so this case does not fail an implementation that emits lowercase addresses. A dedicated casing vector will assert it.",
+    "The tier-2 ABI-unknown fallback (_event_unknown). The single log here resolves, so the fallback path is never taken.",
+    "The ERC-721 branch of the Transfer signature collision (4 topics, empty data).",
+    "Reverted receipts (status failed, empty logs), an unknown transaction hash (result null), and contract creation (to null with contractAddress set).",
+    "Chain-specific extension passthrough. This mainnet receipt carries no extension fields, so nothing exercises the rule.",
+    "The 24-leading-zero-byte variant of the structural zero-block strip, which emits an 8-byte tail.",
+    "Batching and the Vary requirement, which are response-level and request-level concerns outside a single-case comparison.",
+    "Byte layout and object key order, which the spec deliberately does not make normative."
+  ]
+}

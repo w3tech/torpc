@@ -1,0 +1,15 @@
+{
+  "name": "torpc-conformance",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Implementation-agnostic conformance vectors for the TORPC EVM compression spec, with a dependency-free runner that drives any implementation through an adapter.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "test": "node --test runner/*.test.mjs",
+    "test:case": "node runner/run-case.mjs"
+  },
+  "license": "CC0-1.0"
+}
