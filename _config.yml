@@ -1,0 +1,15 @@
+title: TORPC
+description: Token Optimized RPC: an opt-in compression layer for blockchain JSON-RPC
+theme: jekyll-theme-primer
+# Rewrites links between .md files to their built .html counterparts, so the
+# markdown in specs/ stays readable in the repo and works on the site.
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+exclude:
+  - conformance/
+  - CONTRIBUTING.md
+  - SECURITY.md
+  - TRADEMARKS.md
