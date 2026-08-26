@@ -38,7 +38,7 @@ The condition on all of the above is that the statement is accurate and does not
 
 ## What is reserved
 
-**The `@torpc` npm scope and the `w3tech/torpc*` repositories** are controlled by the maintainers. Do not publish under that scope.
+**The `@w3tech.io` npm scope and the `w3tech/torpc*` repositories** are controlled by the maintainers, and the reference packages are published under that scope. Do not publish under it, and do not publish a package whose name implies it is the reference implementation.
 
 **"TORPC Conformant"** is a reserved designation. It may be used only by an implementation that both:
 

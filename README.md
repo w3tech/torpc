@@ -143,15 +143,22 @@ LICENSE              CC0 1.0 Universal, covering everything above
 
 Code lives in [w3tech/torpc-js](https://github.com/w3tech/torpc-js), licensed Apache-2.0:
 
-- **`@torpc/decoder`** (`codec/`), the reference bidirectional mapper between standard EVM
-  JSON-RPC responses and the TORPC compact form. Structural only, no ABI resolution.
+- **[`@w3tech.io/torpc-decoder`](https://www.npmjs.com/package/@w3tech.io/torpc-decoder)**
+  (`codec/`), the reference bidirectional mapper between standard EVM JSON-RPC responses and the
+  TORPC compact form. Structural only, no ABI resolution.
 - **`@torpc/toevm-rules`** (`packages/torpc-toevm-rules/`), the typed ruleset library that names
   each normative transformation as a pure function.
 - **`bench/`**, the benchmark harness: token efficiency plus retrieval accuracy over pinned ETH
   mainnet fixtures.
 
-Those are the in-repository package names. Nothing is published to a public registry yet, so build
-from source in that repository.
+The decoder is on npm:
+
+```
+npm install @w3tech.io/torpc-decoder
+```
+
+The ruleset library is not published. `@torpc/toevm-rules` is its in-repository name and no package
+under that name exists on any registry, so build it from source.
 
 The conformance runner in this repository ships no transform of its own. It validates the golden
 vectors, and it exercises an implementation only through an adapter you point at one, in any
