@@ -93,7 +93,7 @@ The current normative document is [`specs/evm-v1.md`](./specs/evm-v1.md), at Dra
 
 Tiers at or above 3 are reserved. A reserved tier can only be given meaning by a specification release, never by an implementation choosing one unilaterally.
 
-Reference packages, currently the published `@w3tech.io/torpc-decoder` and the unpublished in-repository `@torpc/toevm-rules`, use semantic versioning in their own repository and declare their target specification version in their README and package metadata.
+Reference packages, currently the published `@w3tech.io/torpc-decoder` and the unpublished in-repository `@w3tech.io/torpc-toevm-rules`, use semantic versioning in their own repository and declare their target specification version in their README and package metadata.
 
 ## TORPC Conformant certification
 
